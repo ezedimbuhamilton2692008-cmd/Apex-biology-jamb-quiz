@@ -1,1 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex JAMB Tutorial - Biology CBT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+    <!-- START SCREEN -->
+    <div id="start-screen" class="screen">
+        <div class="start-box">
+            <h1>APEX JAMB TUTORIAL</h1>
+            <h2>Biology CBT Test</h2>
+
+            <p>40 Questions • 40 Minutes</p>
+
+            <input
+                type="text"
+                id="student-name"
+                placeholder="Enter your full name"
+            >
+
+            <button onclick="startTest()">Start Test</button>
+        </div>
+    </div>
+
+
+    <!-- CBT SCREEN -->
+    <div id="cbt-screen" class="screen hidden">
+
+        <header class="top-bar">
+            <div>
+                <strong>APEX JAMB TUTORIAL</strong>
+                <span>Biology CBT</span>
+            </div>
+
+            <div class="timer">
+                Time Left:
+                <strong id="timer">40:00</strong>
+            </div>
+        </header>
+
+
+        <main class="cbt-container">
+
+            <!-- QUESTION AREA -->
+            <section class="question-area">
+
+                <div class="question-number">
+                    Question <span id="current-question">1</span> of 40
+                </div>
+
+                <div id="question-container">
+                    <!-- Question will appear here -->
+                </div>
+
+                <div class="navigation">
+                    <button onclick="previousQuestion()">Previous</button>
+                    <button onclick="nextQuestion()">Next</button>
+                </div>
+
+            </section>
+
+
+            <!-- QUESTION NAVIGATOR -->
+            <aside class="question-panel">
+
+                <h3>Questions</h3>
+
+                <div id="question-numbers">
+                    <!-- Numbers will be created by JavaScript -->
+                </div>
+
+                <button
+                    class="submit-btn"
+                    onclick="submitTest()"
+                >
+                    Submit Test
+                </button>
+
+            </aside>
+
+        </main>
+
+    </div>
+
+
+    <!-- RESULT SCREEN -->
+    <div id="result-screen" class="screen hidden">
+
+        <div class="result-box">
+
+            <h1>Test Completed!</h1>
+
+            <h2 id="student-result-name"></h2>
+
+            <div class="score">
+                <span id="score">0</span> / 40
+            </div>
+
+            <p>
+                Percentage:
+                <strong id="percentage">0%</strong>
+            </p>
+
+            <hr>
+
+            <h2>Answer Review</h2>
+
+            <div id="review-container">
+                <!-- Explanations will appear here -->
+            </div>
+
+            <button onclick="location.reload()">
+                Take Test Again
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+
+</body>
+  </html>
